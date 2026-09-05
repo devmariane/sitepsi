@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,7 +8,7 @@ html, body {
 }
 #cartoes {
   padding: 80px 5%;
-  background-color: #EFE8DE;
+  background-color: #efe8de;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .card-container {
@@ -36,7 +37,7 @@ html, body {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; 
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,75 +77,79 @@ h2 {
   color: #333;
 }
 
-#primeiraParte {
+.primeiraParte {
   padding: 50px 5%;
   text-align: center;
-  background-image: url(assets/dotty-tropical-fern-leaves-shadows.jpg);
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(56, 101, 175, 0) 60%,
+      rgba(56, 101, 175, 0.35) 72%,
+      #3865af 100%
+    ),
+    url(assets/foto.jpeg);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 50vh;
+  position: relative;
 }
 
-#textoPrimeiraParte {
-  background-color: rgba(255, 255, 255, 0.49);
-  backdrop-filter: blur(3px); /* Aplica o efeito de desfoque */
-  -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Safari */
-  padding: 20px;
-  margin: 15px auto;
-  border-radius: 15px;
-  display: inline-block;
+.primeiraParteConteudo {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  bottom: 24px;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-p {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #000000;
-  margin: 10px 0;
+.textoPrimeiraParte {
+  font-family: "Nunito", sans-serif;
+  font-size: 21px;
+  color: #ffffff;
+  margin: 0 0 14px;
 }
-.mensagem{
-  background-color: #3865af;
-  color: white;
+
+.agendarConsulta {
+  background-color: #f0cd7e;
   border: none;
-  padding: 15px 30px;
-  font-size: 16px;
+  font-size: 21px;
   text-decoration: none;
-  border-radius: 60px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: min(400px, 100%);
+  height: 50px;
 }
-.mensagem > a {
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-
+.agendarConsulta > a {
+  color: #3865af;
+  font-size: 16px;
+  text-decoration: none;
 }
-.mensagem > a:visited {
+.agendarConsulta > a:visited {
   color: white;
   font-size: 16px;
   text-decoration: none;
-
 }
 
 #sobre {
-  padding: 50px 5%;
+  padding: 0 8%;
   text-align: center;
   background-color: #3865af;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Nunito", sans-serif;
+  font-size: 21px;
+  padding-bottom: 50px;
 }
-#sobre h2 {
-  color: white;
-  margin-bottom: 20px;
-}
-#sobre img {
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
+
 #sobre p {
   color: white;
   max-width: 600px;
-  margin: 50px auto; /* Corrigido de 50px 20px para centralizar no mobile */
   line-height: 1.5;
+}
+
+#sobre p:first-child {
+  margin-top: 0;
 }
 
 .conversas {
@@ -179,7 +184,7 @@ p {
 .links {
   font-weight: bold;
   color: #000000;
-  text-align: justify;   
+  text-align: justify;
   margin: 10px auto;
   cursor: pointer;
   display: flex;
@@ -263,7 +268,7 @@ footer > p {
 /* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -271,28 +276,27 @@ footer > p {
     background: transparent;
     border: none;
     cursor: pointer;
-    position: relative; 
-    z-index: 1001; 
+    position: relative;
+    z-index: 1001;
   }
 
   .menu-toggle .barro {
     width: 100%;
     height: 3px;
-    background-color: #000000; 
+    background-color: #000000;
     border-radius: 2px;
     transition: all 0.3s ease;
   }
   .nav-menu {
-    position: fixed; 
+    position: fixed;
     top: 80px;
     right: -100%;
-    width: 100%; 
-    height: 100vh; 
+    width: 100%;
+    height: 100vh;
     background-color: #fff;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     transition: right 0.4s ease;
-    z-index: 999; 
-   
+    z-index: 999;
   }
 
   .nav-menu.active {
@@ -312,13 +316,12 @@ footer > p {
   #fotoMariane {
     width: 150px; /* Foto um pouco menor no celular */
     margin-bottom: 20px;
-
   }
   .menu-toggle.active .barro:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
   .menu-toggle.active .barro:nth-child(2) {
-    opacity: 0; 
+    opacity: 0;
   }
   .menu-toggle.active .barro:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
@@ -326,15 +329,14 @@ footer > p {
 }
 
 /* ==========================================================================
-   --- NOVA SEÇÃO: CONFIGURAÇÕES EXCLUSIVAS PARA TELAS GRANDES (DESKTOP) ---
-   ========================================================================== */
+--- NOVA SEÇÃO: CONFIGURAÇÕES EXCLUSIVAS PARA TELAS GRANDES (DESKTOP) ---
+========================================================================== */
 @media (min-width: 1024px) {
-  
   /* Alinha a seção primeira parte */
   #primeiraParte {
     padding: 100px 10%;
   }
-  
+
   #textoPrimeiraParte {
     max-width: 700px;
     display: block;
@@ -348,7 +350,7 @@ footer > p {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding: 80px 10%;
+    padding: 0 10%;
     text-align: left;
   }
   #sobre img {
