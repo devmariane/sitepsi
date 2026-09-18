@@ -6,16 +6,55 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+#logo {
+  width: 100px;
+  height: auto;
+}
 #cartoes {
-  padding: 80px 5%;
+  padding: 15px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   background-color: #efe8de;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .card-container {
   perspective: 1000px;
-  width: 300px; /* Ajuste o tamanho como preferir */
-  height: 200px;
-  margin: 50px auto; /* Centraliza o card na página */
+  width: min(300px, 88vw);
+  height: 250px;
+  margin: 0;
+}
+.textos,
+#sobre p,
+#historia,
+#textoPrimeiraParte {
+  font-family: "Nunito", sans-serif;
+  font-size: 21px;
+  margin: 0 auto 1.2em;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.textos,
+#historia {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+#textoPrimeiraParte {
+  color: #ffffff;
+  max-width: 700px;
+  margin: 0 auto 14px;
+}
+
+#sobre p {
+  max-width: 600px;
+  padding: 0;
+  margin: 0 auto 1.2em;
 }
 
 /* 2. O card em si que vai girar e guardar as duas faces */
@@ -35,8 +74,7 @@ body {
 /* 4. Configuração das faces (frente e verso) */
 .face {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -45,6 +83,12 @@ body {
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.face > * {
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -62,8 +106,33 @@ body {
   background-color: #feb054;
   color: rgb(0, 0, 0);
   transform: rotateY(180deg);
+  overflow: hidden;
 }
 
+.verso h2,
+.verso p {
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+  word-break: break-word;
+}
+#textoComFundo {
+  padding: 50px 5%;
+  text-align: center;
+  background-image: url(assets/dotty-tropical-fern-leaves-shadows.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#pComFundo {
+  background-color: rgba(255, 255, 255, 0.442);
+  backdrop-filter: blur(15px); /* Aplica o efeito de desfoque */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Safari */
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: 15px;
+  display: inline-block;
+}
 h1 {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
@@ -108,19 +177,33 @@ h2 {
 .textoPrimeiraParte {
   font-family: "Nunito", sans-serif;
   font-size: 21px;
-  color: #ffffff;
+  font-weight: bold;
+  color: #101010;
+  border-radius: 10px;
   margin: 0 0 14px;
+  background-color: rgba(255, 255, 255, 0.108);
+  backdrop-filter: blur(5px); /* Aplica o efeito de desfoque */
+  -webkit-backdrop-filter: blur(5px); /* Compatibilidade com Safari */
 }
-
+#historia {
+  color: #3865af;
+  margin: 3%;
+  max-width: 400px;
+  width: 100%;
+  text-align: justify; /* Mantém o texto justificado no computador */
+}
 .agendarConsulta {
   background-color: #f0cd7e;
   border: none;
+  border-radius: 15px;
   font-size: 21px;
   text-decoration: none;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease;
-  width: min(400px, 100%);
+  width: min(300px, 100%);
   height: 50px;
+  margin: 20px 0;
 }
 .agendarConsulta > a {
   color: #3865af;
@@ -135,7 +218,6 @@ h2 {
 
 #sobre {
   padding: 0 8%;
-  text-align: center;
   background-color: #3865af;
   font-family: "Nunito", sans-serif;
   font-size: 21px;
@@ -157,6 +239,12 @@ h2 {
   text-align: center;
   background-color: #50a1da;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
 }
 .conversas h2 {
   color: white;
@@ -218,8 +306,8 @@ footer > p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
-  background-color: #fff;
+  padding: 0px 10px;
+  background-color: #ffebd4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -235,7 +323,10 @@ footer > p {
 .nav-menu ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 0;
+  padding: 0 20px;
+  margin: 0;
 }
 
 .nav-menu a {
@@ -255,6 +346,7 @@ footer > p {
   background: transparent;
   border: none;
   cursor: pointer;
+  margin-right: 12px;
 }
 
 .menu-toggle .barro {
@@ -278,6 +370,7 @@ footer > p {
     cursor: pointer;
     position: relative;
     z-index: 1001;
+    margin-right: 16px;
   }
 
   .menu-toggle .barro {
@@ -316,7 +409,80 @@ footer > p {
   #fotoMariane {
     width: 150px; /* Foto um pouco menor no celular */
     margin-bottom: 20px;
+      width: 75vw;
+      height: 40vh;
+      object-fit: cover;
+      border-radius: 50%;
   }
+
+  .faq-container {
+            background-color: #FFEBD4; /* Cor marrom de fundo */
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+            color: #ffffff;
+        }
+
+        .faq-container h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .faq-container p.subtitle {
+            font-size: 14px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        /* Estilização do Accordion (Sanfona) */
+        details {
+            background-color: #ffffff; /* Cor clara interna das caixas */
+            color: #70543e; /* Cor do texto das perguntas */
+            margin-bottom: 15px;
+            border-radius: 25px; /* Bordas bem arredondadas */
+            text-align: left;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Cabeçalho clicável (A pergunta) */
+        summary {
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            list-style: none; /* Esconde a setinha padrão do HTML no Chrome/Firefox */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Remove a setinha padrão em navegadores Safari */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Adiciona o ícone de seta personalizada simulando a imagem */
+        summary::before {
+            content: "⏷"; 
+            margin-right: 10px;
+            font-size: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        /* Rotaciona a seta quando o menu estiver aberto */
+        details[open] summary::before {
+            transform: rotate(-180deg);
+        }
+
+        /* Conteúdo interno (A resposta que aparece ao clicar) */
+        .content {
+            padding: 0 20px 15px 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #4a3626;
+        }
   .menu-toggle.active .barro:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
@@ -369,6 +535,12 @@ footer > p {
     align-items: center;
     gap: 30px;
     padding: 100px 5%;
+  }
+  #historia {
+    background-color: #efe8de;
+    max-width: 400px;
+    width: 100%;
+    text-align: justify; /* Mantém o texto justificado no computador */
   }
   .card-container {
     margin: 0; /* Remove a margem vertical grande do mobile */
