@@ -493,7 +493,11 @@ footer > p {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
-
+.textoPrimeiraParteCelular {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
 /* ==========================================================================
 --- NOVA SEÇÃO: CONFIGURAÇÕES EXCLUSIVAS PARA TELAS GRANDES (DESKTOP) ---
 ========================================================================== */
