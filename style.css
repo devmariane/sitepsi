@@ -498,6 +498,12 @@ footer > p {
     display: none;
   }
 }
+
+.textoPrimeiraParteDesktop{
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
 /* ==========================================================================
 --- NOVA SEÇÃO: CONFIGURAÇÕES EXCLUSIVAS PARA TELAS GRANDES (DESKTOP) ---
 ========================================================================== */
