@@ -493,114 +493,55 @@ footer > p {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
-.textoPrimeiraParteCelular {
-  @media (min-width: 768px) {
-    display: none;
+
+@media (max-width: 768px){
+.primeiraParteDesktop{
+    display: none !important;
   }
 }
 
-.textoPrimeiraParteDesktop{
-  @media (max-width: 768px) {
-    display: none;
-  }
+/* Estilos desktop */
+@media (min-width: 768px){
+.primeiraParteMobile{
+  display: none !important;
 }
-/* ==========================================================================
---- NOVA SEÇÃO: CONFIGURAÇÕES EXCLUSIVAS PARA TELAS GRANDES (DESKTOP) ---
-========================================================================== */
-@media (min-width: 768px) {
-  /* Alinha a seção primeira parte */
-  #primeiraParteDesktop {
-    height: 100vh;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .primeiraParte {
-    padding: 100px 10%;
-    height: 80vh;
-    background-image:
-      linear-gradient(
-        to left,
-        rgba(56, 101, 175, 0) 78%,
-        rgba(56, 101, 175, 0.25) 90%,
-        #3865af 100%
-      ),
-      url(assets/foto.jpeg);
-    background-size: cover;
-    background-position: center;
-  }
 
-  #textoPrimeiraParte {
-    max-width: 700px;
-    display: block;
-    margin: 20px auto 40px auto;
-  }
-  .primeiraParte,
-  #sobre {
-    flex-basis: 50%;
-  }
-  #sobre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  /* Faz os cartões ficarem lado a lado (Fileira de 3 colunas) */
-  #cartoes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 30px;
-    padding: 100px 50px;
-  }
-  #historiaContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-  }
-  #historia {
-    background-color: #efe8de;
-    max-width: 400px;
-    width: 100%;
-    text-align: justify; /* Mantém o texto justificado no computador */
-  }
-  #conteinerCartoes {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 300px));
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 100px 50px;
-  }
-  .card-container {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 6 / 5;
-    margin: 0; /* Remove a margem vertical grande do mobile */
-    justify-self: center;
-  }
+.primeiraParteDesktop{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
 
-  /* Centraliza melhor a seção de chamados de conversas */
-  .conversas {
-    padding: 80px 10%;
-  }
-  .conversas p {
-    text-align: center; /* Fica mais elegante centralizado no PC */
-  }
+.azulGradiente{
+  background-color: #3865af;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 10px;
+}
 
-  /* Organiza os links de conteúdo em uma grade de duas colunas */
-  #conteudos {
-    padding: 80px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #conteudos h2 {
-    grid-column: span 2; /* Título ocupa o topo inteiro */
-  }
-  .links {
-    margin: 15px 0;
-    font-size: 18px;
-  }
+.azulGradiente h2{
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+.bannerFoto{
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right, 
+    #3865af 0%, 
+    rgba(56, 101, 175, 0.6) 20%, 
+    rgba(56, 101, 175, 0) 50%
+  ),
+  url(assets/foto.jpeg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+  
+
 }
