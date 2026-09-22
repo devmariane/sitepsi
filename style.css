@@ -152,14 +152,14 @@ h2 {
   background-image:
     linear-gradient(
       to bottom,
-      rgba(56, 101, 175, 0) 60%,
-      rgba(56, 101, 175, 0.35) 72%,
+      rgba(56, 101, 175, 0) 72%,
+      rgba(56, 101, 175, 0.25) 86%,
       #3865af 100%
     ),
     url(assets/foto.jpeg);
   background-size: cover;
   background-position: center;
-  height: 50vh;
+  height: 80vh;
   position: relative;
 }
 
@@ -409,80 +409,80 @@ footer > p {
   #fotoMariane {
     width: 150px; /* Foto um pouco menor no celular */
     margin-bottom: 20px;
-      width: 75vw;
-      height: 40vh;
-      object-fit: cover;
-      border-radius: 50%;
+    width: 75vw;
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .faq-container {
-            background-color: #FFEBD4; /* Cor marrom de fundo */
-            padding: 30px 20px;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            max-width: 400px;
-            margin: 0 auto;
-            color: #ffffff;
-        }
+    background-color: #ffebd4; /* Cor marrom de fundo */
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #ffffff;
+  }
 
-        .faq-container h2 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
+  .faq-container h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
 
-        .faq-container p.subtitle {
-            font-size: 14px;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
+  .faq-container p.subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
 
-        /* Estilização do Accordion (Sanfona) */
-        details {
-            background-color: #ffffff; /* Cor clara interna das caixas */
-            color: #70543e; /* Cor do texto das perguntas */
-            margin-bottom: 15px;
-            border-radius: 25px; /* Bordas bem arredondadas */
-            text-align: left;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
+  /* Estilização do Accordion (Sanfona) */
+  details {
+    background-color: #ffffff; /* Cor clara interna das caixas */
+    color: #70543e; /* Cor do texto das perguntas */
+    margin-bottom: 15px;
+    border-radius: 25px; /* Bordas bem arredondadas */
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
 
-        /* Cabeçalho clicável (A pergunta) */
-        summary {
-            padding: 15px 20px;
-            font-weight: bold;
-            font-size: 15px;
-            cursor: pointer;
-            list-style: none; /* Esconde a setinha padrão do HTML no Chrome/Firefox */
-            display: flex;
-            align-items: center;
-        }
+  /* Cabeçalho clicável (A pergunta) */
+  summary {
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none; /* Esconde a setinha padrão do HTML no Chrome/Firefox */
+    display: flex;
+    align-items: center;
+  }
 
-        /* Remove a setinha padrão em navegadores Safari */
-        summary::-webkit-details-marker {
-            display: none;
-        }
+  /* Remove a setinha padrão em navegadores Safari */
+  summary::-webkit-details-marker {
+    display: none;
+  }
 
-        /* Adiciona o ícone de seta personalizada simulando a imagem */
-        summary::before {
-            content: "⏷"; 
-            margin-right: 10px;
-            font-size: 12px;
-            transition: transform 0.2s ease;
-        }
+  /* Adiciona o ícone de seta personalizada simulando a imagem */
+  summary::before {
+    content: "⏷";
+    margin-right: 10px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+  }
 
-        /* Rotaciona a seta quando o menu estiver aberto */
-        details[open] summary::before {
-            transform: rotate(-180deg);
-        }
+  /* Rotaciona a seta quando o menu estiver aberto */
+  details[open] summary::before {
+    transform: rotate(-180deg);
+  }
 
-        /* Conteúdo interno (A resposta que aparece ao clicar) */
-        .content {
-            padding: 0 20px 15px 20px;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #4a3626;
-        }
+  /* Conteúdo interno (A resposta que aparece ao clicar) */
+  .content {
+    padding: 0 20px 15px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4a3626;
+  }
   .menu-toggle.active .barro:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
@@ -497,10 +497,26 @@ footer > p {
 /* ==========================================================================
 --- NOVA SEÇÃO: CONFIGURAÇÕES EXCLUSIVAS PARA TELAS GRANDES (DESKTOP) ---
 ========================================================================== */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   /* Alinha a seção primeira parte */
-  #primeiraParte {
+  #primeiraParteDesktop {
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .primeiraParte {
     padding: 100px 10%;
+    height: 80vh;
+    background-image:
+      linear-gradient(
+        to left,
+        rgba(56, 101, 175, 0) 78%,
+        rgba(56, 101, 175, 0.25) 90%,
+        #3865af 100%
+      ),
+      url(assets/foto.jpeg);
+    background-size: cover;
+    background-position: center;
   }
 
   #textoPrimeiraParte {
@@ -508,33 +524,29 @@ footer > p {
     display: block;
     margin: 20px auto 40px auto;
   }
-
-  /* Sobre Mim lado a lado (Foto na esquerda, texto na direita) */
+  .primeiraParte,
+  #sobre {
+    flex-basis: 50%;
+  }
   #sobre {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 50px;
-    padding: 0 10%;
-    text-align: left;
   }
-  #sobre img {
-    margin-bottom: 0;
-    width: 250px; /* Foto levemente maior no computador */
-    border-radius: 10px; /* Deixa a foto com bordas arredondadas no computador */
-  }
-  #sobre p {
-    margin: 0;
-  }
-
   /* Faz os cartões ficarem lado a lado (Fileira de 3 colunas) */
   #cartoes {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 30px;
-    padding: 100px 5%;
+    padding: 100px 50px;
+  }
+  #historiaContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
   }
   #historia {
     background-color: #efe8de;
@@ -542,8 +554,21 @@ footer > p {
     width: 100%;
     text-align: justify; /* Mantém o texto justificado no computador */
   }
+  #conteinerCartoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 300px));
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 50px;
+  }
   .card-container {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 6 / 5;
     margin: 0; /* Remove a margem vertical grande do mobile */
+    justify-self: center;
   }
 
   /* Centraliza melhor a seção de chamados de conversas */
