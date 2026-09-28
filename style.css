@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 24px;
   background-color: #efe8de;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -494,54 +495,111 @@ footer > p {
   }
 }
 
+.historiaContainerMobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 768px){
-.primeiraParteDesktop{
+  .primeiraParteDesktop{
+    display: none !important;
+  }
+  .historiaContainerDesktop{
+    display: none !important;
+  }
+  .containerCartoesDesktop{
     display: none !important;
   }
 }
 
 /* Estilos desktop */
 @media (min-width: 768px){
-.primeiraParteMobile{
-  display: none !important;
-}
+  .primeiraParteMobile{
+    display: none !important;
+  }
 
-.primeiraParteDesktop{
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-}
+  .historiaContainerMobile{
+    display: none !important;
+  }
 
-.azulGradiente{
-  background-color: #3865af;
-  height: 100%;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 10px;
-}
+  .containerCartoesMobile{
+    display: none !important;
+  }
 
-.azulGradiente h2{
-  color: #fff;
-  font-family: "Nunito", sans-serif;
-  text-align: center;
-}
-.bannerFoto{
-  width: 50%;
-  height: 100%;
-  background-image: linear-gradient(
-    to right, 
-    #3865af 0%, 
-    rgba(56, 101, 175, 0.6) 20%, 
-    rgba(56, 101, 175, 0) 50%
-  ),
-  url(assets/foto.jpeg);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+  .primeiraParteDesktop{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .azulGradiente{
+    background-color: #3865af;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+
+  .azulGradiente h2{
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    padding: 0 10%;
+  }
+  .bannerFoto{
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(
+      to right, 
+      #3865af 0%, 
+      rgba(56, 101, 175, 0.6) 20%, 
+      rgba(56, 101, 175, 0) 50%
+    ),
+    url(assets/foto.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
   
+  .historiaContainerIntroSplit{
+    display: flex;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    color: #3865af;
+    padding: 0 15%;
+  }
+
+  .divider{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #3865AF;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  .historiaContainerIntroCentered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    color: #3865af;
+    padding: 0 15%;
+    text-align: center;
+  }
+
+  .containerCartoesDesktop{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
 }
