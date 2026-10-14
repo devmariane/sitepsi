@@ -156,7 +156,7 @@ h2 {
       rgba(56, 101, 175, 0.25) 86%,
       #3865af 100%
     ),
-    url(assets/foto.jpeg);
+    url(assets/fotoInicio.jpg);
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -195,6 +195,8 @@ h2 {
 .agendarConsulta {
   background-color: #f0cd7e;
   border: none;
+
+  color: #3865af;
   border-radius: 15px;
   font-size: 21px;
   text-decoration: none;
@@ -211,7 +213,7 @@ h2 {
   text-decoration: none;
 }
 .agendarConsulta > a:visited {
-  color: white;
+  color: #3865af;
   font-size: 16px;
   text-decoration: none;
 }
@@ -415,6 +417,22 @@ footer > p {
     border-radius: 50%;
   }
 
+  #conteinerCartoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .conversas #fotoMariane {
+    width: min(100%, 360px);
+    height: auto;
+    aspect-ratio: 9 / 7;
+    margin: 0 auto 20px;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
   .faq-container {
     background-color: #ffebd4; /* Cor marrom de fundo */
     padding: 30px 20px;
@@ -493,14 +511,8 @@ footer > p {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
-.textoPrimeiraParteCelular {
-  @media (min-width: 768px) {
-    display: none;
-  }
-}
-
-.textoPrimeiraParteDesktop{
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .textoPrimeiraParteDesktop {
     display: none;
   }
 }
@@ -524,7 +536,7 @@ footer > p {
         rgba(56, 101, 175, 0.25) 90%,
         #3865af 100%
       ),
-      url(assets/foto.jpeg);
+      url(assets/fotoInicio.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -602,5 +614,398 @@ footer > p {
   .links {
     margin: 15px 0;
     font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  #primeiraParteDesktop {
+    display: block;
+    height: auto;
+  }
+
+  #primeiraParteDesktop > .primeiraParte {
+    display: none;
+  }
+
+  #primeiraParteDesktop > .textoPrimeiraParteDesktop {
+    display: flex;
+    align-items: stretch;
+    min-height: 560px;
+    max-height: 720px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #3865af;
+    color: #ffffff;
+  }
+
+  .textoPrimeiraParteDesktop > .textoPrimeiraParteDesktop {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 0 0 45%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px clamp(32px, 6vw, 96px);
+    box-sizing: border-box;
+    background-color: #3865af;
+    color: #ffffff;
+    font-family: "Nunito", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .textoPrimeiraParteDesktop .agendarConsulta {
+    width: 220px;
+    margin: 26px 0 0;
+  }
+
+  .fotoMarianeDesktop {
+    position: relative;
+    flex: 1 1 55%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .fotoMarianeDesktop::before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: clamp(80px, 12vw, 180px);
+    background: linear-gradient(
+      to right,
+      #3865af 0%,
+      rgba(56, 101, 175, 0.25) 50%,
+      rgba(56, 101, 175, 0) 100%
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  .fotoMarianeDesktop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 36%;
+  }
+
+  #primeiraParteDesktop > #sobre {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 52px max(8%, calc((100% - 1120px) / 2));
+    box-sizing: border-box;
+    background-color: #ffebd4;
+  }
+
+  #primeiraParteDesktop > #sobre p {
+    max-width: none;
+    margin: 0;
+    color: #3865af;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  #historiaContainer {
+    display: block;
+    width: min(100%, 900px);
+    margin: 0 auto;
+    padding-top: 28px;
+    border-top: 1px solid rgba(56, 101, 175, 0.25);
+    text-align: center;
+  }
+
+  #historiaContainer #historia {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 18px;
+    padding: 0;
+    background-color: #ffebd4;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .faq-container {
+    width: 100%;
+    margin: 0;
+    padding: 56px max(24px, calc((100% - 900px) / 2));
+    box-sizing: border-box;
+    background-color: #ffebd4;
+    color: #3865af;
+    font-family: "Nunito", sans-serif;
+  }
+
+  #cartoes {
+    background-color: #ffebd4;
+  }
+
+  .faq-container h2 {
+    margin: 0 0 24px;
+    color: #3865af;
+    text-align: center;
+  }
+
+  .faq-container details {
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(56, 101, 175, 0.16);
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #39465b;
+  }
+
+  .faq-container summary {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    list-style: none;
+  }
+
+  .faq-container summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-container summary::before {
+    content: "+";
+    flex: 0 0 20px;
+    color: #3865af;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .faq-container details[open] summary::before {
+    content: "−";
+  }
+
+  .faq-container .content {
+    padding: 0 20px 18px 40px;
+    color: #4a5361;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .faq-container > .agendarConsulta {
+    display: block;
+    margin: 24px auto 0;
+  }
+
+  #conversas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "heading heading"
+      "intro photo"
+      "practice photo"
+      "tcc schemes"
+      "button button";
+    align-items: start;
+    gap: 28px 36px;
+    padding: 68px clamp(32px, 5.5vw, 80px);
+    text-align: left;
+  }
+
+  #conversas h2 {
+    grid-area: heading;
+    margin: 0;
+    text-align: center;
+  }
+
+  #conversas #fotoMariane {
+    grid-area: photo;
+    width: 100%;
+    height: 320px;
+    margin: 0;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  #conversas .textos {
+    display: contents;
+  }
+
+  #conversas .textos p {
+    max-width: none;
+    margin: 0;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  #conversas .textos p:nth-of-type(1) {
+    grid-area: intro;
+  }
+
+  #conversas .textos p:nth-of-type(2) {
+    grid-area: practice;
+  }
+
+  #conversas .textos p:nth-of-type(3) {
+    grid-area: tcc;
+  }
+
+  #conversas .textos p:nth-of-type(4) {
+    grid-area: schemes;
+  }
+
+  #conversas > .agendarConsulta {
+    grid-area: button;
+    justify-self: center;
+    margin: 0;
+  }
+
+  #conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    justify-content: center;
+    gap: 24px;
+    padding: 48px clamp(24px, 6vw, 80px);
+    background-color: #efe8de;
+  }
+
+  #conteudo > .instagram-media {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+  }
+
+  #conteudo iframe {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .textoPrimeiraParteDesktop > .textoPrimeiraParteDesktop {
+    padding: 36px clamp(32px, 4vw, 72px);
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .textoPrimeiraParteDesktop .agendarConsulta {
+    width: 200px;
+    margin-top: 20px;
+  }
+
+  #primeiraParteDesktop > #sobre {
+    gap: 32px;
+    padding: 40px max(8%, calc((100% - 1000px) / 2));
+  }
+
+  #primeiraParteDesktop > #sobre p {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  #cartoes {
+    box-sizing: border-box;
+    gap: 24px;
+    padding: 72px 40px;
+  }
+
+  #historiaContainer {
+    width: min(100%, 800px);
+    padding-top: 22px;
+  }
+
+  #historiaContainer #historia {
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  #conteinerCartoes {
+    gap: 24px;
+    padding: 72px 40px;
+  }
+
+  #conversas {
+    gap: 22px 28px;
+    padding: 48px max(32px, calc((100% - 1280px) / 2));
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    justify-content: center;
+  }
+
+  #conversas #fotoMariane {
+    height: 280px;
+  }
+
+  #conversas .textos p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .faq-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  #conteudo {
+    gap: 20px;
+    padding: 36px max(24px, calc((100% - 1120px) / 2));
+  }
+}
+
+.whatsapp-fixo {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2000;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  aspect-ratio: 1;
+  place-items: center;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: transform 180ms ease;
+}
+
+.whatsapp-fixo:hover {
+  transform: translateY(-3px);
+}
+
+.whatsapp-fixo:focus-visible {
+  outline: 3px solid #3865af;
+  outline-offset: 4px;
+}
+
+.whatsapp-fixo img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@media (max-width: 768px) {
+  .whatsapp-fixo {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    display: grid;
+    width: 60px;
+    height: 60px;
+    z-index: 2000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fixo {
+    transition: none;
   }
 }
