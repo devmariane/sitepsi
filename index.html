@@ -34,6 +34,26 @@ gtag('js', new Date());
 gtag('config', 'G-B2EZYFEWGM');
 </script>
 </script>
+
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'ads_conversion_Reservar_hor_rio_1', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script>
+
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -71,7 +91,7 @@ gtag('config', 'G-B2EZYFEWGM');
 <li><a href="#cartoes">Focos do Atendimento</a></li>
 <li><a href="#conversas">Sobre mim</a></li>
 <li><a href="#faq">Dúvidas frequentes</a></li>
-<li><a href="#conteudos">Conteúdos</a></li>
+<li><a href="#conteudo">Conteúdos</a></li>
 </ul>
 </nav>
 </header>
@@ -82,9 +102,9 @@ gtag('config', 'G-B2EZYFEWGM');
     <div class="textoPrimeiraParte textoPrimeiraParteCelular">
     Lide melhor com suas emoções, inseguranças e relacionamentos para viver uma vida com propósito.
     </div>
-    <button class="agendarConsulta textoPrimeiraParteCelular"> <a target="_blank" rel="noopener noreferrer"
+    <button class="agendarConsulta textoPrimeiraParteCelular" onclick="gtag_report_conversion()"> <a target="_blank" rel="noopener noreferrer"
     href="https://api.whatsapp.com/send/?phone=5511912931382&text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+psicoterapia&type=phone_number&app_absent=0&utm_source=ig">Agende
-    uma consulta</a></button>
+    uma consulta</a> </button>
     </div>
   
 
@@ -92,7 +112,7 @@ gtag('config', 'G-B2EZYFEWGM');
  <div class="textoPrimeiraParteDesktop">
     <div class="textoPrimeiraParteDesktop">
     Lide melhor com suas emoções, inseguranças e relacionamentos para viver uma vida com propósito.
-    <button class="agendarConsulta"> <a target="_blank" rel="noopener noreferrer"
+    <button class="agendarConsulta" onclick="gtag_report_conversion()"> <a target="_blank" rel="noopener noreferrer"
     href="https://api.whatsapp.com/send/?phone=5511912931382&text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+psicoterapia&type=phone_number&app_absent=0&utm_source=ig">Agende
     uma consulta</a></button>
     </div>
@@ -115,7 +135,7 @@ gtag('config', 'G-B2EZYFEWGM');
         <p class="textos"id="historia">Ou ainda, momentos em que as emoções vêm como ondas gigantescas e difíceis de conter, trazendo um medo constante de ficar só ou de perder o controle. Viver com o peso da ansiedade, o vazio da depressão ou a intensidade de emoções à flor da pele não precisa ser a sua única realidade.</p>
         </div>
 </div>
-<button class="agendarConsulta"> <a target="_blank" rel="noopener noreferrer"
+<button class="agendarConsulta" onclick="gtag_report_conversion()" > <a target="_blank" rel="noopener noreferrer"
 href="https://api.whatsapp.com/send/?phone=5511912931382&text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+psicoterapia&type=phone_number&app_absent=0&utm_source=ig">Agende
 uma consulta</a></button>
 </div>
@@ -188,7 +208,7 @@ uma consulta</a></button>
     </div>
     </div>
 </div>
-<button class="agendarConsulta"> <a target="_blank" rel="noopener noreferrer"
+<button class="agendarConsulta" onclick="gtag_report_conversion()"> <a target="_blank" rel="noopener noreferrer"
 href="https://api.whatsapp.com/send/?phone=5511912931382&text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+psicoterapia&type=phone_number&app_absent=0&utm_source=ig">Agende
 uma consulta</a></button>
 </section>
@@ -215,7 +235,7 @@ uma consulta</a></button>
 
 <p>Terapia dos Esquemas: Vamos além do sintoma imediato para compreender a raiz das suas dores. Investigamos padrões emocionais profundos (esquemas) construídos ao longo da vida — como medo do abandono, perfeccionismo, culpa ou sensação de vazio — permitindo uma reestruturação emocional duradoura e uma relação mais compassiva consigo mesmo(a). </p>
 </div>
-<button class="agendarConsulta"> <a target="_blank" rel="noopener noreferrer"
+<button class="agendarConsulta" onclick="gtag_report_conversion()"> <a target="_blank" rel="noopener noreferrer"
 href="https://api.whatsapp.com/send/?phone=5511912931382&text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+psicoterapia&type=phone_number&app_absent=0&utm_source=ig">Agende
 uma consulta</a></button>
 </section>
@@ -269,7 +289,7 @@ Terapia dos Esquemas: Investigamos a origem de padrões emocionais mais antigos 
             </div>
         </details>
     </div>
-    <button class="agendarConsulta"> <a target="_blank" rel="noopener noreferrer"
+    <button class="agendarConsulta" onclick="gtag_report_conversion()"> <a target="_blank" rel="noopener noreferrer"
 href="https://api.whatsapp.com/send/?phone=5511912931382&text=Ol%C3%A1%21+Quero+saber+mais+sobre+a+psicoterapia&type=phone_number&app_absent=0&utm_source=ig">Agende
 uma consulta</a></button>
 </section>

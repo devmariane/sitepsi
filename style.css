@@ -483,15 +483,21 @@ footer > p {
 
   /* Adiciona o ícone de seta personalizada simulando a imagem */
   summary::before {
-    content: "⏷";
+    content: "";
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
     margin-right: 10px;
-    font-size: 12px;
+    margin-bottom: 3px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
     transition: transform 0.2s ease;
   }
 
   /* Rotaciona a seta quando o menu estiver aberto */
   details[open] summary::before {
-    transform: rotate(-180deg);
+    transform: rotate(225deg);
   }
 
   /* Conteúdo interno (A resposta que aparece ao clicar) */
